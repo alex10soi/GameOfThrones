@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example 3 column layout</title>
+	<link rel="stylesheet" href="style_form_1.css">
+</head>
+<body>
+	<div class="grid">
+		<div class="grid-item left_sidebar"><img class="image" src="img/maxresdefault.jpg"></div>
+		<div class="grid-item right_sidebar">
+			<div class="form"> 
+				<div class="title">GAME OF THRONES</div>
+				<form action="/action_page.php" target="_blank">
+					<label class="item_1" for=""email">Enter your email</label>
+					<input type="email" placeholder="arya@westeros.com"><br>
+					<label class="item_2" for="password">Choose secure password</label>
+					<h3>Must be at least 8 characters</h3>
+					<input id="password" type="password" name="password" placeholder="password">
+					<div class="checkbox">
+					 	<input class="checkbox_input" type="checkbox" name="remember_me" id="checkbox"><label class="checkbox_label" for="checkbox">Remember me</label>
+					</div>
+					<button class="button" type="button" name="button"><h3> Sign up</h3></button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

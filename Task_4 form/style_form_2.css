@@ -1,0 +1,186 @@
+.* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body{
+	font-family: Arial, sans-serif;
+	background-color: #202020;
+	font-size: 15px;
+	line-height: 20px;
+	margin: 0;
+	padding: 0;
+}
+
+.grid{
+	min-height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "left_sidebar right_sidebar";
+	padding: 0px;
+}
+
+.grid-item {
+	border: 1px solid #e4e4e4;
+	text-align: center;
+	color: white;
+
+}
+
+.left_sidebar {
+	grid-area: left_sidebar;
+	background: #202020;
+}
+
+.right_sidebar {
+	grid-area: right_sidebar;
+	background: #202020;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.left_sidebar, .right_sidebar {
+	display: grid;
+	justify-content: center;
+}
+
+.image {
+	width: 150%;
+	min-height: 100%;
+	margin: 0 0 0 -150px;
+
+}
+
+.title {
+	display: flex;
+	justify-content: center;
+	margin: 0 0 50px 0;
+	font-family: "Game of Thrones";
+	font-size: 30px;
+	color: #d3bb89;
+	text-transform: uppercase;
+
+}
+
+.form {
+	width: 370px;
+	min-height: 80%;
+	color: #202020;
+	text-align: start;
+}
+
+label{
+	display: table;
+	color: #d3bb89;
+	font-size: 18px;
+	font-family: "EB Garamond", serif;
+	margin-bottom: 10px;
+
+}
+
+.info {
+	width: 100%;
+	background-color: #202020;
+	color: #fef8eb;
+	font-family: "Open Sans", sans-serif;
+	font-size: 15px;
+	border-left: 2px solid #d3bb89;
+	padding-left: 10px;
+	margin-bottom: 30px;
+}
+
+input#text {
+	padding-bottom: 10px;
+}
+
+
+input {
+	width: 100%;
+	background-color: #202020;
+	border-bottom: 1px solid #d3bb89;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	line-height: 2;
+	padding-left: 3px;
+	margin-bottom: 20px;
+	font-size: 15px;
+	color: #d3bb89;
+}
+
+input:hover {
+    outline: 2px solid #d3bb89 ;
+    border-bottom: none;
+}
+
+
+input:focus {
+    outline: 2px solid #d3bb89;
+}
+
+.item_2 {
+	margin-bottom: 10px;
+}
+
+h3 {
+	margin: 0;
+	color: #fef8eb;
+	font-size: 10px;
+	font-family: "Open Sans", sans-serif;
+}
+
+
+button:hover {
+	outline: 1px solid #fef8eb;
+	transition: 0.5s;
+}
+
+button:focus{
+	outline: 0;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 40px;
+	background-color: #c19a49;
+	border: none;
+	margin-top: 60px;
+}
+
+.button h3 {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 100;
+}
+
+select {
+	width: 100%;
+	height: 40px;
+	background-color: #202020;
+	color: #fef8eb;
+	font-size: 15px;
+	/*line-height: 3;*/
+	border: none;
+	padding-bottom: 5px;
+	border-bottom: 2px solid #d3bb89;
+}
+
+select:focus {
+	outline: 0;
+}
+
+.menu {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.list {
+	line-height: 3;
+}
