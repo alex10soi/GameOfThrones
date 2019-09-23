@@ -88,7 +88,7 @@ label{
 	background-color: #202020;
 	color: #fef8eb;
 	font-family: "Open Sans", sans-serif;
-	font-size: 15px;
+	font-size: 14px;
 	border-left: 2px solid #d3bb89;
 	padding-left: 10px;
 	margin-bottom: 30px;
@@ -130,7 +130,7 @@ input:focus {
 h3 {
 	margin: 0;
 	color: #fef8eb;
-	font-size: 10px;
+	font-size: 12px;
 	font-family: "Open Sans", sans-serif;
 }
 
@@ -170,6 +170,9 @@ select {
 	border: none;
 	padding-bottom: 5px;
 	border-bottom: 2px solid #d3bb89;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 select:focus {

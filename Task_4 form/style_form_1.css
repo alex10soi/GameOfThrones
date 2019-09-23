@@ -56,6 +56,13 @@ body{
 
 }
 
+@font-face {
+	font-family: "Game of Thrones";
+	font-style: normal;
+	font-weight: 100;
+	src: url("fonts/Game of Thrones.ttf") format('truetype');
+}
+
 .title {
 	display: flex;
 	justify-content: center;
@@ -115,7 +122,7 @@ input:focus {
 h3 {
 	margin: 0 0 5px;
 	color: #fef8eb;
-	font-size: 10px;
+	font-size: 12px;
 	font-family: "Open Sans", sans-serif;
 }
 
