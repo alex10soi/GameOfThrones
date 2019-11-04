@@ -63,6 +63,7 @@ selectInput.addEventListener('change', function() {
 
 
 function checkFirstForm() {
+    let x = document.getElementById("title");
     let form1 = document.getElementById("form1");
     let form2 = document.getElementById("form2");
 
@@ -81,7 +82,6 @@ function checkFirstForm() {
 }
 
 function checkSecondForm() {
-    let form2 = document.getElementById("form2");
     let select = document.getElementById('select');
 
     if (rulesForValidation.text(document.getElementById('text').value) && select.value !== "Select House" &&
@@ -99,3 +99,4 @@ function checkSecondForm() {
         }
     }
 }
+
