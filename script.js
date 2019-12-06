@@ -8,7 +8,7 @@ let rulesForValidation = {
         return regexPassword.test(value);
     },
     text: function(value) {
-        const regexText = /[\w{2,}\_\-!@#$%&*^]/i;
+        const regexText = /[\-!@#$%&*^№:;<>/]/i;
         return regexText.test(value);
     },
 };
@@ -35,7 +35,7 @@ passwordlInput.addEventListener('blur', function() {
 
 let textInput = document.getElementById("text");
 textInput.addEventListener('blur', function() {
-    if (!rulesForValidation.text(document.getElementById('text').value)) {
+    if (rulesForValidation.text(document.getElementById('text').value) || document.getElementById('text').value === "") {
         textInput.style = "border: 1px solid red;";
     } else {
         textInput.style = "border-bottom: 1px solid #d3bb89;";
@@ -43,8 +43,9 @@ textInput.addEventListener('blur', function() {
 });
 
 let textInput2 = document.getElementById("text2");
+textInput2.innerHTML = "";
 textInput2.addEventListener('blur', function() {
-    if (!rulesForValidation.text(document.getElementById('text2').value)) {
+    if (rulesForValidation.text(document.getElementById('text2').value) || document.getElementById('text2').value === "") {
         textInput2.style = "border: 1px solid red;";
     } else {
         textInput2.style = "border-bottom: 1px solid #d3bb89;";
@@ -64,8 +65,8 @@ selectInput.addEventListener('change', function() {
 
 function checkFirstForm() {
     let x = document.getElementById("title");
-    let form1 = document.getElementById("form1");
-    let form2 = document.getElementById("form2");
+    let form1 = document.getElementById("firstForm");
+    let form2 = document.getElementById("secondForm");
 
     if (rulesForValidation.email(document.getElementById('email').value) &&
         rulesForValidation.password(document.getElementById('password').value)) {
@@ -77,21 +78,22 @@ function checkFirstForm() {
         }
         if (!rulesForValidation.password(document.getElementById('password').value)) {
             passwordlInput.style = "border: 1px solid red;";
-        }  
+        }
     }
 }
 
 function checkSecondForm() {
     let select = document.getElementById('select');
 
-    if (rulesForValidation.text(document.getElementById('text').value) && select.value !== "Select House" &&
-        rulesForValidation.text(document.getElementById('text2').value)) {
+    if (!rulesForValidation.text(document.getElementById('text').value) && document.getElementById('text').value !== "" &&
+        select.value !== "Select House" && !rulesForValidation.text(document.getElementById('text2').value) &&
+        document.getElementById('text2').value !== "") {
         alert("You passed this lesson. Congratulate!!!");
     } else {
-        if (!rulesForValidation.text(document.getElementById('text').value)) {
+        if (document.getElementById('text').value === "") {
             textInput.style = "border: 1px solid red;";
         }
-        if (!rulesForValidation.text(document.getElementById('text2').value)) {
+        if (document.getElementById('text2').value === "") {
             textInput2.style = "border: 1px solid red;";
         }
         if (select.value === "Select House") {
@@ -99,4 +101,3 @@ function checkSecondForm() {
         }
     }
 }
-

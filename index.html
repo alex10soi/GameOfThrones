@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <title>Game of Thrones</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,28 +15,28 @@
             <div class="form">
                 <div class="form_wrapper">
                     <div class="title">GAME OF THRONES</div>
-                    <form id="form1" class="form1" action="/action_page.php" target="_blank">
-                        <label class="item_1" for="email">Enter your email</label>
+                    <form id="firstForm" class="firstForm" action="" target="_blank">
+                        <label class="userEmail paragraph" for="email">Enter your email</label>
                         <input id="email" type="email" placeholder="arya@westeros.com"><br>
-                        <label class="item_2" for="password">Choose secure password</label>
+                        <label class="userPassword paragraph" for="password">Choose secure password</label>
                         <h3>Must be at least 8 characters</h3>
                         <input id="password" type="password" name="password" placeholder="password">
                         <div class="checkbox">
                             <input class="checkbox_input" type="checkbox" name="remember_me" id="checkbox"><label class="checkbox_label" for="checkbox">Remember me</label>
                         </div>
-                        <button id="button1" class="button" type="button" name="button" onclick="checkFirstForm()">
+                        <button id="submit_firstForm" class="button" type="button" name="button" onclick="checkFirstForm()">
                             <h3> Sign up</h3>
                         </button>
                     </form>
-                    <form id="form2" class="form2" action="/action_page.php" target="_blank">
+                    <form id="secondForm" class="secondForm" action="/action_page.php" target="_blank">
                         <div class="info">You've successfully joined the game<br>
                             Tell us more about yourself
                         </div>
-                        <label class="item_1" for="text">Who are you?<br>
+                        <label class="userName paragraph" for="text">Who are you?<br>
                             <h3>Alpha-numeric username</h3>
                         </label>
                         <input type="text" id="text" placeholder="arya"><br>
-                        <label class="item_2">Your Great House</label>
+                        <label class="selectHouse paragraph">Your Great House</label>
                         <select id="select" name="Select house">
                             <option value="Select House">Select House</option>
                             <option value="one badroom">Targaryen</option>
@@ -45,8 +46,9 @@
                             <option value="two-storey house">Tully</option>
                         </select>
                         <label class="menu" for="text2">You preferences, hobbies, wishes, etc.</label>
-                        <input id="text2" class="list" type="text" name="preferences" placeholder="I have a long TOKILL list...">
-                        <button id="button2" class="button" type="button" name="button" onclick="checkSecondForm()">
+                        <textarea id="text2" class="list" type="text" name="preferences" placeholder="I have a long TOKILL list..." rows="1">
+                        </textarea>
+                        <button id="submit_seconForm" class="button" type="button" name="button" onclick="checkSecondForm()">
                             <h3> Save</h3>
                         </button>
                     </form>
