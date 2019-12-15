@@ -17,7 +17,7 @@ let rulesForValidation = {
 
 let emailInput = document.getElementById("email");
 emailInput.addEventListener('blur', function() {
-    if (!rulesForValidation.email(document.getElementById('email').value)) {
+    if (!rulesForValidation.email(emailInput.value)) {
         emailInput.style = "border: 1px solid red;"
     } else {
         emailInput.style = "border-bottom: 1px solid #d3bb89;"
@@ -26,7 +26,7 @@ emailInput.addEventListener('blur', function() {
 
 let passwordlInput = document.getElementById("password");
 passwordlInput.addEventListener('blur', function() {
-    if (!rulesForValidation.password(document.getElementById('password').value)) {
+    if (!rulesForValidation.password(passwordlInput.value)) {
         passwordlInput.style = "border: 1px solid red;";
     } else {
         passwordlInput.style = "border-bottom: 1px solid #d3bb89;";
@@ -35,7 +35,7 @@ passwordlInput.addEventListener('blur', function() {
 
 let textInput = document.getElementById("text");
 textInput.addEventListener('blur', function() {
-    if (rulesForValidation.text(document.getElementById('text').value) || document.getElementById('text').value === "") {
+    if (rulesForValidation.text(textInput.value) || textInput.value === "") {
         textInput.style = "border: 1px solid red;";
     } else {
         textInput.style = "border-bottom: 1px solid #d3bb89;";
@@ -45,7 +45,7 @@ textInput.addEventListener('blur', function() {
 let textInput2 = document.getElementById("text2");
 textInput2.innerHTML = "";
 textInput2.addEventListener('blur', function() {
-    if (rulesForValidation.text(document.getElementById('text2').value) || document.getElementById('text2').value === "") {
+    if (rulesForValidation.text(textInput2.value) || textInput2.value === "") {
         textInput2.style = "border: 1px solid red;";
     } else {
         textInput2.style = "border-bottom: 1px solid #d3bb89;";
