@@ -1,301 +1,285 @@
 .* {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #202020;
-    font-size: 15px;
-    line-height: 20px;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #202020;
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .grid {
-    max-height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "left_sidebar right_sidebar";
-    padding: 0;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "left_sidebar right_sidebar";
+  padding: 0;
 }
 
 .grid-item {
-    text-align: center;
-    color: white;
-
+  text-align: center;
+  color: white;
 }
 
 .left_sidebar {
-    background-position: center;
-    background-size: cover;
-    grid-area: left_sidebar;
+  background-position: center;
+  background-size: cover;
+  grid-area: left_sidebar;
 }
 
 .right_sidebar {
-    grid-area: right_sidebar;
-    background: #202020;
-
+  grid-area: right_sidebar;
+  background: #202020;
 }
 
 .left_sidebar,
 .right_sidebar {
-    max-height: 100%;
-    background-image: url(img/darknoise.png);
-    display: grid;
-    justify-content: center;
-    align-items: center;
+  max-height: 100%;
+  background-image: url(img/darknoise.png);
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 .image {
-    width: 150%;
-    min-height: 100%;
-    margin: 0 0 0 -150px;
-
+  width: 150%;
+  min-height: 100%;
+  margin: 0 0 0 -150px;
 }
 
 @font-face {
-    font-family: "Game of Thrones", "Arial", sans-serif;
-    font-style: normal;
-    font-weight: 100;
-    src: url("fonts/Game of Thrones.ttf") format('truetype');
+  font-family: "Game of Thrones", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  src: url("fonts/Game of Thrones.ttf") format('truetype');
 }
 
 .title {
-    display: flex;
-    justify-content: center;
-    margin: 0 0 45px 0;
-    font-family: "Game of Thrones";
-    font-size: 30px;
-    color: #d3bb89;
-    text-transform: uppercase;
-
-
+  display: flex;
+  justify-content: center;
+  margin: 0 0 45px 0;
+  font-family: "Game of Thrones";
+  font-size: 30px;
+  color: #d3bb89;
+  text-transform: uppercase;
 }
 
 .form {
-    display: flex;
-    width: 370px;
-    max-height: 70%;
-    color: #202020;
-    text-align: start;
-    align-items: center;
+  display: flex;
+  width: 370px;
+  max-height: 70%;
+  color: #202020;
+  text-align: start;
+  align-items: center;
 }
 
 #secondForm {
-    display: none;
+  display: none;
 }
 
 
 label {
-    display: table;
-    color: #d3bb89;
-    font-size: 18px;
-    font-family: "EB Garamond", serif;
-    margin-bottom: 10px;
+  display: table;
+  color: #d3bb89;
+  font-size: 18px;
+  font-family: "EB Garamond", serif;
+  margin-bottom: 10px;
 }
 
 .info {
-    width: 100%;
-    background-color: #202020;
-    color: #fef8eb;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    border-left: 2px solid #d3bb89;
-    padding-left: 10px;
-    margin-bottom: 30px;
+  width: 100%;
+  background-color: #202020;
+  color: #fef8eb;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  border-left: 2px solid #d3bb89;
+  padding-left: 10px;
+  margin-bottom: 30px;
 }
 
 input#text {
-    padding: 0 0 10px 3px;
+  padding: 0 0 10px 3px;
 }
 
 input {
-    width: 100%;
-    background-color: #202020;
-    border-bottom: 1px solid #d3bb89;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    line-height: 3;
-    /*2*/
-    padding-left: 3px;
-    margin-bottom: 20px;
-    font-size: 15px;
-    color: #d3bb89;
-
+  width: 100%;
+  background-color: #202020;
+  border-bottom: 1px solid #d3bb89;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  line-height: 3;
+  padding-left: 3px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #d3bb89;
 }
 
-
 input:-webkit-autofill {
-    -webkit-transition: background-color 5000s ease-in-out 0s;
-    -webkit-text-fill-color: #d3bb89 !important;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #d3bb89 !important;
 }
 
 input:hover,
 input:focus {
-    outline: 2px solid #d3bb89;
+  outline: 2px solid #d3bb89;
 }
 
 
 .paragrath {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 h3 {
-    margin: 0 0 5px;
-    color: #fef8eb;
-    font-size: 12px;
-    font-family: "Open Sans", sans-serif;
+  margin: 0 0 5px;
+  color: #fef8eb;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .remember_me {
-    display: inline-block;
-    margin: 0;
-    height: 40px;
-    line-height: 2;
+  display: inline-block;
+  margin: 0;
+  height: 40px;
+  line-height: 2;
 }
-
 
 .checkbox {
-    position: relative;
-    margin-top: 15px;
+  position: relative;
+  margin-top: 15px;
 }
-
 
 .checkbox_input {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    margin: 0 15px 0 0;
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    position: absolute;
-    border-bottom: none;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 0 15px 0 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  border-bottom: none;
 }
-
 
 .checkbox_input:hover,
 .checkbox_input:focus {
-    outline: 0;
+  outline: 0;
 }
 
 .checkbox_label {
-    display: inline-block;
-    margin: 0;
-    height: 40px;
-    padding-left: 35px;
-    font-size: 20px;
-    cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  height: 40px;
+  padding-left: 35px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .checkbox_label:before {
-    content: "";
-    display: block;
-    width: 25px;
-    height: 25px;
-    background-color: #d3bb89;
-    border-radius: 5px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-color: #d3bb89;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .checkbox_label:after {
-    content: "";
-    display: block;
-    width: 25px;
-    height: 25px;
-    background-image: url("img/checkbox-26.png");
-    background-size: 25px 25px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    opacity: 0;
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-image: url("img/checkbox-26.png");
+  background-size: 25px 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
 }
 
 .checkbox_input:checked+.checkbox_label:after {
-    opacity: 1;
+  opacity: 1;
 }
 
 button:hover {
-    outline: 1px solid #fef8eb;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    transition: 0.5s;
+  outline: 1px solid #fef8eb;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
 }
 
 button:focus {
-    outline: 0;
+  outline: 0;
 }
 
 .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 40px;
-    background-color: #c19a49;
-    border: none;
-    margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: #c19a49;
+  border: none;
+  margin-top: 50px;
 }
 
 .button h3 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 100;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 100;
 }
 
 #select {
-    width: 100%;
-    height: 40px;
-    background-color: #202020;
-    color: #fef8eb;
-    font-size: 15px;
-    border: none;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #d3bb89;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+  width: 100%;
+  height: 40px;
+  background-color: #202020;
+  color: #fef8eb;
+  font-size: 15px;
+  border: none;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #d3bb89;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 #select:focus {
-    outline: 0;
+  outline: 0;
 }
 
 .menu {
-    margin-top: 20px;
-    margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
-/*
-.list {
-    line-height: 3;
-}*/
-
 
 .list {
-    display: flex;
-    width: 100%;
-    background-color: #202020;
-    font-size: 16px;
-    justify-content: left;
-    align-items: center;
-    border: none;
-    padding: 10px 0;
-    border-bottom: solid 3px #d3bb89;
-    color: #d3bb89;
-    resize: none;
+  display: flex;
+  width: 100%;
+  background-color: #202020;
+  font-size: 16px;
+  justify-content: left;
+  align-items: center;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 3px #d3bb89;
+  color: #d3bb89;
+  resize: none;
 }
 
 .list:focus {
@@ -303,31 +287,32 @@ button:focus {
 }
 
 /* for Slider */
-
 .owl-carousel {
-    overflow: hidden;
-    background-color: gray;
-    margin: 0;
-    padding: 0;
-    display: block;
-
+  overflow: hidden;
+  background-color: gray;
+  margin: 0;
+  padding: 0;
+  display: block;
 }
 
 .item {
-    background-image: url(img/darknoise.png);
-    margin: 0;
-    padding: 0;
-    display: block;
+  background-image: url(img/darknoise.png);
+  margin: 0;
+  padding: 0;
+  display: block;
 }
 
 .image_slide {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
 }
 
 .item .image_slide {
-    max-height: 100%;
+  max-height: 100vh;
 }
 
-
+.nselect__list {
+  overflow: auto;
+}
 
