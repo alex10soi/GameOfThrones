@@ -1,53 +1,54 @@
 <?php
-session_start();
+  session_start();
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Game of Thrones</title>
-    <link rel="stylesheet" href="OwlCarousel2-2.3.4/docs/assets/css/docs.theme.min.css">
-    <link rel="stylesheet" href="OwlCarousel2-2.3.4/docs/assets/owlcarousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="OwlCarousel2-2.3.4/docs/assets/owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="public/OwlCarousel2-2.3.4/docs/assets/css/docs.theme.min.css">
+    <link rel="stylesheet" href="public/OwlCarousel2-2.3.4/docs/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="public/OwlCarousel2-2.3.4/docs/assets/owlcarousel/assets/owl.theme.default.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
-    <script src="OwlCarousel2-2.3.4/docs/assets/owlcarousel/owl.carousel.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <script src="public/OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
+    <script src="public/OwlCarousel2-2.3.4/docs/assets/owlcarousel/owl.carousel.js"></script>
+    <link rel="stylesheet" href="public/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="nselect/build/jquery.nselect.css">
+    <link rel="stylesheet" href="public/nselect/build/jquery.nselect.css">
   </head>
   <body>
     <div class="grid">
       <div class="owl-carousel  grid-item left_sidebar">
         <div class="item">
-          <img class="image_slide" src="img/new753c11c098aee9c16140cc8bc46a17c3.jpg" alt="Foto dragon">
+          <img class="image_slide" src="public/img/new753c11c098aee9c16140cc8bc46a17c3.jpg" alt="Foto dragon">
         </div>
         <div class="item">
-          <img class="image_slide" src="img/small_388c5c6a7543eb4eab3c4ff817b4a7c0.jpg" alt="Foto Granjoy" value="Greyjoy">
+          <img class="image_slide" src="public/img/small_388c5c6a7543eb4eab3c4ff817b4a7c0.jpg" alt="Foto Granjoy" value="Greyjoy">
         </div>
         <div class="item">
-          <img class="image_slide" src="img/New Lannister.jpg" alt="Foto Lannister" value="Lannister">
+          <img class="image_slide" src="public/img/New Lannister.jpg" alt="Foto Lannister" value="Lannister">
         </div>
         <div class="item">
-          <img class="image_slide" src="img/new28d136fe3c0721efe8c410ef9a70af2a.jpg" alt="Foto Daenerys Targaryen">
+          <img class="image_slide" src="public/img/new28d136fe3c0721efe8c410ef9a70af2a.jpg" alt="Foto Daenerys Targaryen">
         </div>
         <div class="item">
-          <img class="image_slide" src="img/small_749440bae8f9daae56b10150672a9db2.jpg" alt="Foto Arren" value="Arryn">
+          <img class="image_slide" src="public/img/small_749440bae8f9daae56b10150672a9db2.jpg" alt="Foto Arren" value="Arryn">
         </div>
         <div class="item">
-          <img class="image_slide" src="img/small_abb5ea539bbd6a9edef8e5bad640ac80.jpg" alt="Foto Targaryen" value="Targaryen">
+          <img class="image_slide" src="public/img/small_abb5ea539bbd6a9edef8e5bad640ac80.jpg" alt="Foto Targaryen" value="Targaryen">
         </div>
         <div class="item">
-          <img class="image_slide" src="img/6b29093976c86642846b4f1c1f205fde.jpg" alt="Foto Daenerys">
+          <img class="image_slide" src="public/img/6b29093976c86642846b4f1c1f205fde.jpg" alt="Foto Daenerys">
         </div>
         <div class="item">
-          <img class="image_slide" src="img/New Baratheon.jpg" alt="Foto Baratheon" value="Baratheon">
+          <img class="image_slide" src="public/img/New Baratheon.jpg" alt="Foto Baratheon" value="Baratheon">
         </div>
         <div class="item">
-          <img class="image_slide" src="img/New Trully.jpg" alt="Foto Trully" value="Tully">
+          <img class="image_slide" src="public/img/New Trully.jpg" alt="Foto Trully" value="Tully">
         </div>
         <div class="item">
-          <img class="image_slide" src="img/stark.jpg" alt="Foto Stark" value="Stark">
+          <img class="image_slide" src="public/img/stark.jpg" alt="Foto Stark" value="Stark">
         </div>
       </div>
       <div id="right-sidebar" class="grid-item right_sidebar">
@@ -67,9 +68,9 @@ session_start();
               ><br>
               <?php
                 if(isset($_SESSION['flag']['email']) && $_SESSION['flag']['email'] == 0){
-                echo '<div class="error">Invalid email</div>';
-                }elseif(isset($_SESSION['exists'])){
-                echo '<div class="error">File exists</div>';
+                  echo '<div class="error">Invalid email</div>';
+                }elseif(isset($_SESSION['account_exists'])){
+                  echo '<div class="error">File exists</div>';
                 }
               ?>
               <label class="userPassword paragrath" for="password">Choose secure password</label>
@@ -77,8 +78,8 @@ session_start();
               <input id="password" type="password" name="password" placeholder="password">
               <?php
                 if(isset($_SESSION['flag']['password']) && $_SESSION['flag']['password'] == 0){
-                echo '<div class="error">Invalid password</div>';
-                echo 'style="border: 1px solid red;"';
+                  echo '<div class="error">Invalid password</div>';
+                  echo 'style="border: 1px solid red;"';
                 }
               ?>
               <div class="checkbox">
@@ -90,10 +91,10 @@ session_start();
               <h3> Sign up</h3>
               </button>
             </form>
-            <form id="secondForm" class="secondForm" action="registrationForm.php" method="post" 
+            <form id="secondForm" class="secondForm" action="handler.php" method="post" 
               <?php
                 if (isset($_SESSION['display_form'])){
-                echo 'style="display:block"';
+                  echo 'style="display:block"';
                 }
               ?>
             >
@@ -145,10 +146,10 @@ session_start();
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="js/script.js"></script>
-    <script src="OwlCarousel2-2.3.4/docs/assets/vendors/highlight.js"></script>
-    <script src="OwlCarousel2-2.3.4/docs/assets/js/app.js"></script>
-    <script src="nselect/build/jquery.nselect.min.js"></script>
-    <script src="nselect/build/jquery.nselect.js"></script>
+    <script type="text/javascript" src="public/js/script.js"></script>
+    <script src="public/OwlCarousel2-2.3.4/docs/assets/vendors/highlight.js"></script>
+    <script src="public/OwlCarousel2-2.3.4/docs/assets/js/app.js"></script>
+    <script src="public/nselect/build/jquery.nselect.min.js"></script>
+    <script src="public/nselect/build/jquery.nselect.js"></script>
   </body>
 </html>
