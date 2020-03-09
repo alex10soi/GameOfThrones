@@ -1,8 +1,0 @@
-<IfModule mod_deflate.c>
-    <filesmatch "\.(js|css|html|jpg|png|php)$">
-        SetOutputFilter DEFLATE
-    </filesmatch>
-</IfModule>
-
-RewriteEngine on
-RewriteRule (.*) build/demo.html [QSA,L]

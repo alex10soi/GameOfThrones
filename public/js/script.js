@@ -1,3 +1,4 @@
+// Validation rules for user input.
 let rulesForValidation = {
   email: function(value) {
     const regexEmail = /(\w+[\.\-\_]?\w+)[@]{1,}\w+\.\w+/;
@@ -53,69 +54,98 @@ textInput2.addEventListener('blur', function() {
 
 
 
-//for Slider_4
-
 $(document).ready(function() {
-  let owl = $('.owl-carousel');
-  owl.owlCarousel({
-    items: 1,
-    loop: true,
-    margin: 0,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    autoplayHoverPause: true
-  });
-  $('.play').on('click', function() {
-    owl.trigger('play.owl.autoplay', [1000])
-  });
-  $('.stop').on('click', function() {
-    owl.trigger('stop.owl.autoplay')
+  const userEmail = $('#email').val();
+
+
+  $('#secondForm').submit((ev) => {
+    ev.preventDefault();
+    let valuesFromSecondForm = $('#secondForm').serializeArray();
+
+    $.ajax({
+      type: 'POST',
+      url: '../infoKeeper.php',
+      data: {"userEmail" : '' + userEmail,
+             "infoAboutMe" : valuesFromSecondForm},
+      async: true,
+      error: function () {
+        console.log('Server fail');
+      },
+      success: function (data) {
+        ev.target.submit();
+      }
+    });
   });
 
-  // Sets the size of the slider and pictures
+
+	// Settings for Slider Slick
+	$('.slick-slider').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  pauseOnHover: false,
+	  pauseOnFocus: false,
+	  autoplay: true,
+	  autoplaySpeed: 3000,
+	  focusOnSelect: true
+	});
+
+
+	// Sets the size of the slider and pictures
   setSizeToSlider();
 
+  // Adjusts block sizes and pictures for slider
   function setSizeToSlider() {
     let halfOfWindow = $(".grid").width() / 2;
     let heightOfWindow = $(window).height();
+    let widthSlickTrack = halfOfWindow * 10;
 
-    $(".owl-carousel, .item, .image_slide, .left_sidebar, .right_sidebar").css({ "width": halfOfWindow,
-      "height": heightOfWindow });
+    $(".slick-list, .slick-track, .slick-slide").css({ "width": halfOfWindow,
+      "height": heightOfWindow 
+    });
+
+    $(".slick-track").css({ "width": widthSlickTrack,
+      "height": heightOfWindow 
+    });
   }
-
+	
   $(window).resize(function(){
     setSizeToSlider();
   });
 
+	//DropDown 
+	$('.nselect').select2({});
 
-  // launches dropDown
-  $('.nselect').nSelect();
+	//-------------------------------------------
+  
+	setInterval(checkChangesSelect, 1000);
 
-  //Removes error-borders from select
-  let selectInput = $(".nselect__head");
-  selectInput.on("click", function() {
-    $(this).css("box-shadow", "none");
-  });
+	// Checks for changes to DropDown
+	function checkChangesSelect(){
+		setInterval(stopStartSlide, 50);
+	}
 
-
-  // Reads the selected value and scrolls the carousel to the desired image
-  $(".nselect__list").find("li").click(function() {
-    let propActive = $('._active').attr("data-val");
-    if (propActive !== "Select House") {
-      owl.trigger('play.owl.autoplay', [50]);
+	// Title taken from DropDown
+	let title = '';
 
 
-      // Stop the slideshow after selecting an item in DropDown
-      let myVar = setInterval(myTimer, 50);
+	// Starts a slide to the selected image in DropDown. The selected "Select House" item again restores 
+	// the auto-scroll of the slider.
+	function stopStartSlide(){
+		let tittleBlock = $('#select2-select-container').attr('title');
+		let activeItem = $('.slick-active').find('img').attr('value');
+		if(tittleBlock != title){
+			$('.slick-slider').slick('slickPlay');
+		}
+		title = tittleBlock;
 
-      function myTimer() {
-        if ($('.owl-item[class~="active"] .item img').attr("value") === propActive) {
-          owl.trigger('stop.owl.autoplay');
-          clearInterval(myVar);
-        }
-      }
-    } else if (propActive === "Select House") {
-      owl.trigger('play.owl.autoplay', [3000]);
-    }
-  });
+		if(tittleBlock != 'Select House' && typeof activeItem != 'underfined' && activeItem != tittleBlock ){
+			$('.slick-slider').slick('slickSetOption', 'autoplay', true);
+			$('.slick-slider').slick('slickSetOption', 'autoplaySpeed', 1);
+		}else if(tittleBlock == 'Select House'){
+			$('.slick-slider').slick('slickSetOption', 'autoplay', true);
+			$('.slick-slider').slick('slickSetOption', 'autoplaySpeed', 3000);
+		}else if(typeof activeItem != 'underfined' && activeItem == tittleBlock){
+			$('.slick-slider').slick('slickPause');
+		}
+	}
 });

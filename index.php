@@ -1,25 +1,25 @@
 <?php
   session_start();
 ?>
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Game of Thrones</title>
-    <link rel="stylesheet" href="public/OwlCarousel2-2.3.4/docs/assets/css/docs.theme.min.css">
-    <link rel="stylesheet" href="public/OwlCarousel2-2.3.4/docs/assets/owlcarousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="public/OwlCarousel2-2.3.4/docs/assets/owlcarousel/assets/owl.theme.default.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="public/OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
-    <script src="public/OwlCarousel2-2.3.4/docs/assets/owlcarousel/owl.carousel.js"></script>
-    <link rel="stylesheet" href="public/css/styles.css">
+    <!-- Style Slick Slider -->
+    <link rel="stylesheet" type="text/css" href="public/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="public/slick/slick-theme.css"/>
+    <!-- ----------------------------------------------------------- -->
+    <!-- Style Select2 -->
+    <link href="public/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- ----------------------------------------------------------- -->
+    <link rel="stylesheet" type="text/css" href="public/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="public/nselect/build/jquery.nselect.css">
   </head>
   <body>
     <div class="grid">
-      <div class="owl-carousel  grid-item left_sidebar">
+      <div class="slick-slider grid-item left_sidebar">
         <div class="item">
           <img class="image_slide" src="public/img/new753c11c098aee9c16140cc8bc46a17c3.jpg" alt="Foto dragon">
         </div>
@@ -69,8 +69,6 @@
               <?php
                 if(isset($_SESSION['flag']['email']) && $_SESSION['flag']['email'] == 0){
                   echo '<div class="error">Invalid email</div>';
-                }elseif(isset($_SESSION['account_exists'])){
-                  echo '<div class="error">File exists</div>';
                 }
               ?>
               <label class="userPassword paragrath" for="password">Choose secure password</label>
@@ -80,6 +78,8 @@
                 if(isset($_SESSION['flag']['password']) && $_SESSION['flag']['password'] == 0){
                   echo '<div class="error">Invalid password</div>';
                   echo 'style="border: 1px solid red;"';
+                }else if(!empty($_SESSION['flag']['passwordError'])){
+                  echo '<div class="error">Invalid password</div>'; 
                 }
               ?>
               <div class="checkbox">
@@ -94,7 +94,7 @@
             <form id="secondForm" class="secondForm" action="handler.php" method="post" 
               <?php
                 if (isset($_SESSION['display_form'])){
-                  echo 'style="display:block"';
+                echo 'style="display:block"';
                 }
               ?>
             >
@@ -112,7 +112,7 @@
                 echo '<div class="error">Invalid username</div>';
                 }
               ?>
-              <label class="selectHouse paragrath">Your Great House</label>
+              <label for="select" class="selectHouse paragrath">Your Great House</label>
               <select id="select" class="nselect" name="select_house"
                 <?php echo empty($_SESSION['select_house'])  ? '' : 'value="' . $_SESSION['select_house'] . '"'; ?>
               >
@@ -146,10 +146,11 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="public/js/script.js"></script>
-    <script src="public/OwlCarousel2-2.3.4/docs/assets/vendors/highlight.js"></script>
-    <script src="public/OwlCarousel2-2.3.4/docs/assets/js/app.js"></script>
-    <script src="public/nselect/build/jquery.nselect.min.js"></script>
-    <script src="public/nselect/build/jquery.nselect.js"></script>
+    <!-- Slick Slider -->
+    <script type="text/javascript" src="public/slick/slick.min.js"></script>
+    <!-- Select2 -->
+    <script src="public/select2/dist/js/select2.min.js"></script>
+    <!-- My script -->
+    <script src="public/js/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,2 @@
+AddType text/css .css
+RewriteRule ^resource/(.*)$ resource/$1 [L]
