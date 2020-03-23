@@ -57,14 +57,13 @@ textInput2.addEventListener('blur', function() {
 $(document).ready(function() {
   const userEmail = $('#email').val();
 
-
   $('#secondForm').submit((ev) => {
     ev.preventDefault();
     let valuesFromSecondForm = $('#secondForm').serializeArray();
 
     $.ajax({
       type: 'POST',
-      url: '../infoKeeper.php',
+      url: '../../../GameOfThrones/infoKeeper.php',
       data: {"userEmail" : '' + userEmail,
              "infoAboutMe" : valuesFromSecondForm},
       async: true,

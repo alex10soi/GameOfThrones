@@ -2,7 +2,7 @@
 	session_start();
 
 	// The path to the file with user's messages.
-	define('FILE_PATH', 'public' . DIRECTORY_SEPARATOR. 'json' . DIRECTORY_SEPARATOR . 'infoAboutUsers.json');
+	define('FILE_PATH', 'public' . DIRECTORY_SEPARATOR . 'json' . DIRECTORY_SEPARATOR . 'infoAboutUsers.json');
 
 	// Gets a new object with user input and writes it to a .json file. Then it returns
 	// a response to the AJAX request
@@ -11,6 +11,8 @@
 		$newObjInfoUser = getNewObjInfoUser($dataAboutUser);
 
 		$fileSize = filesize(FILE_PATH);
+		echo '<pre>'; print_r($fileSize); echo '</pre>';
+
 		if($fileSize == 0){
 			$openFile = fopen(FILE_PATH, 'w');
 			$arrInfoUser = [];
