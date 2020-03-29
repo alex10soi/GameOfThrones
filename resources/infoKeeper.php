@@ -1,8 +1,9 @@
 <?php
 	session_start();
 
+	define('_DS', DIRECTORY_SEPARATOR);
 	// The path to the file with user's messages.
-	define('FILE_PATH', 'public' . DIRECTORY_SEPARATOR . 'json' . DIRECTORY_SEPARATOR . 'infoAboutUsers.json');
+	define('FILE_PATH', '..' . _DS . 'public' . _DS . 'json' . _DS . 'infoAboutUsers.json');
 
 	// Gets a new object with user input and writes it to a .json file. Then it returns
 	// a response to the AJAX request

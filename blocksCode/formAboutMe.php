@@ -1,4 +1,4 @@
-<form id="secondForm" class="secondForm" action="handler.php" method="post" 
+<form id="secondForm" class="secondForm" action="resources/handler.php" method="post" 
   <?php
     if (isset($_SESSION['display_form'])){
       echo 'style="display:block"';

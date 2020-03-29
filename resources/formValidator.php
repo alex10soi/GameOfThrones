@@ -1,8 +1,9 @@
 <?php
 	session_start();
 
+	define('_DS', DIRECTORY_SEPARATOR);
 	// The path to the file where user information is stored
-	define('ACCOUNTS_FILE_PATH', 'accounts' . DIRECTORY_SEPARATOR);
+	define('ACCOUNTS_FILE_PATH', '..' . _DS . 'accounts' . _DS);
 
 	// Validation rules for user input.
 	$validation_rules = [

@@ -63,7 +63,7 @@ $(document).ready(function() {
 
     $.ajax({
       type: 'POST',
-      url: '../../../GameOfThrones/infoKeeper.php',
+      url: 'resources/infoKeeper.php',
       data: {"userEmail" : '' + userEmail,
              "infoAboutMe" : valuesFromSecondForm},
       async: true,
