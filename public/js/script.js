@@ -14,7 +14,16 @@ let rulesForValidation = {
   },
 };
 
-
+for (let input in rulesForValidation) {
+  let testInput = document.getElementById(`${input}`);
+  testInput.addEventListener('blur', function() {
+  if (!rulesForValidation.email(emailInput.value)) {
+    emailInput.style = "border: 1px solid red;"
+  } else {
+    emailInput.style = "border-bottom: 1px solid #d3bb89;"
+  }
+});
+}
 
 let emailInput = document.getElementById("email");
 emailInput.addEventListener('blur', function() {
@@ -115,35 +124,30 @@ $(document).ready(function() {
 	$('.nselect').select2({});
 
 	//-------------------------------------------
-  
-	setInterval(checkChangesSelect, 1000);
 
 	// Checks for changes to DropDown
-	function checkChangesSelect(){
-		setInterval(stopStartSlide, 50);
-	}
+	setInterval(stopStartSlide, 50);
 
 	// Title taken from DropDown
 	let title = '';
 
-
 	// Starts a slide to the selected image in DropDown. The selected "Select House" item again restores 
 	// the auto-scroll of the slider.
-	function stopStartSlide(){
+	function stopStartSlide() {
 		let tittleBlock = $('#select2-select-container').attr('title');
 		let activeItem = $('.slick-active').find('img').attr('value');
-		if(tittleBlock != title){
+		if (tittleBlock != title) {
 			$('.slick-slider').slick('slickPlay');
 		}
 		title = tittleBlock;
 
-		if(tittleBlock != 'Select House' && typeof activeItem != 'underfined' && activeItem != tittleBlock ){
+		if (tittleBlock != 'Select House' && typeof activeItem != 'undefined' && activeItem != tittleBlock ) {
 			$('.slick-slider').slick('slickSetOption', 'autoplay', true);
 			$('.slick-slider').slick('slickSetOption', 'autoplaySpeed', 1);
-		}else if(tittleBlock == 'Select House'){
+		} else if (tittleBlock == 'Select House'){
 			$('.slick-slider').slick('slickSetOption', 'autoplay', true);
 			$('.slick-slider').slick('slickSetOption', 'autoplaySpeed', 3000);
-		}else if(typeof activeItem != 'underfined' && activeItem == tittleBlock){
+		} else if (typeof activeItem != 'undefined' && activeItem == tittleBlock) {
 			$('.slick-slider').slick('slickPause');
 		}
 	}

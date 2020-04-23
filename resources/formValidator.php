@@ -1,5 +1,4 @@
 <?php
-	session_start();
 
 	define('_DS', DIRECTORY_SEPARATOR);
 	// The path to the file where user information is stored

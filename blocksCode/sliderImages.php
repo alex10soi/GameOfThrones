@@ -5,7 +5,7 @@
   foreach ($file as $key => $obj) {
     $blockImages .= "<div class='item'>
       <img class='image_slide' src='{$obj->src}' alt='{$obj->alt}'";
-    if($obj->value){
+    if(property_exists($obj, 'value')){
       $blockImages .= " value='{$obj->value}'></div>";
     }else{
       $blockImages .= "></div>";

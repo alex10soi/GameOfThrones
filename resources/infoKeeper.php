@@ -1,5 +1,4 @@
 <?php
-	session_start();
 
 	define('_DS', DIRECTORY_SEPARATOR);
 	// The path to the file with user's messages.
@@ -7,21 +6,19 @@
 
 	// Gets a new object with user input and writes it to a .json file. Then it returns
 	// a response to the AJAX request
-	if($_SERVER['REQUEST_METHOD'] == 'POST'){
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$dataAboutUser = $_POST;
 		$newObjInfoUser = getNewObjInfoUser($dataAboutUser);
 
 		$fileSize = filesize(FILE_PATH);
-		echo '<pre>'; print_r($fileSize); echo '</pre>';
-
-		if($fileSize == 0){
+		if ($fileSize == 0) {
 			$openFile = fopen(FILE_PATH, 'w');
 			$arrInfoUser = [];
 			array_push($arrInfoUser, $newObjInfoUser);
 			fwrite($openFile, json_encode($arrInfoUser));
 			fclose($openFile);
 			echo json_encode('');
-		}else{
+		} else {
 			$flag = true;
 			$file = file_get_contents(FILE_PATH);
 			$file = json_decode($file);
@@ -32,7 +29,7 @@
 					$flag = false;
 				}
 			}
-			if($flag){
+			if ($flag) {
 				array_push($file, $newObjInfoUser);
 			}
 			$openFile = fopen(FILE_PATH, 'w');
@@ -46,12 +43,12 @@
 
 
 	// Gets a new object with user input and returns it
-	function getNewObjInfoUser($dataAboutUser){
+	function getNewObjInfoUser($dataAboutUser) {
 		$newObjInfoUser = [];
 		$userEmail = $dataAboutUser['userEmail'];
 		foreach ($dataAboutUser['infoAboutMe'] as $key => $input) {
-			if($input['name'] == 'submit_seconForm'){
-				continue;
+			if ($input['name'] == 'submit_seconForm') {
+				continue; 
 			}
 			$newObjInfoUser[0]->$userEmail['' . $input['name']] = $input['value']; 
 		}
