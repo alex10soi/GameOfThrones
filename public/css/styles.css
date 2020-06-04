@@ -73,10 +73,10 @@ body {
 }
 
 @font-face {
-  font-family: "Game of Thrones", "Arial", sans-serif;
+  font-family: "Game of Thrones";
   font-style: normal;
   font-weight: 100;
-  src: url('../../../GameOfThrones/public/fonts/Game_of_Thrones.ttf') format('truetype');
+  src: url("../fonts/Game_of_Thrones.ttf") format('truetype');
 }
 
 .title {
@@ -91,7 +91,7 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0 0 45px 0;
-  font-family: "Game of Thrones";
+  font-family: "Game of Thrones", "Arial", sans-serif;
   font-size: 30px;
   color: #d3bb89;
   text-transform: uppercase;
@@ -357,6 +357,10 @@ button:focus {
 
 #select:focus {
   outline: 0;
+}
+
+.select2-container .select2-selection--single {
+  outline: none;
 }
 
 .menu {
