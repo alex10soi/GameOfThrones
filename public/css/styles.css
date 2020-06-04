@@ -176,41 +176,6 @@ input:focus {
   outline: none;
 }
 
-/*input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #d3bb89;
-  -webkit-transition: background-image 5000s ease-in-out 0s;
-  transition: background-image 5000s ease-in-out 0s;
-}*/
-
-/*
-input:-webkit-autofill {
-  -webkit-animation-name: autofill;
-  -webkit-animation-fill-mode: both;
-}
-
-@-webkit-keyframes autofill {
-  to {
-    color: inherit;
-    background: transparent;
-  }
-}
-
-input:hover,
-input:focus {
-  outline: 2px solid #d3bb89;
-}
-
-input:-webkit-autofill { 
-        background-color: #FAFFBD !important; background-image:none !important; 
-}
-*/
-/*
-#email input:-webkit-autofill {
-  background-image: url(../img/darknoise.png) !important;
-}*/
-
 .paragrath {
   margin-bottom: 10px;
 }
@@ -428,4 +393,4 @@ button:focus {
   display: inline-block;
   color: rgba(255, 51, 51, 1);
   font-family: "EB Garamond", serif;
-}*/}
+}
