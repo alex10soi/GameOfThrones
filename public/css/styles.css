@@ -19,9 +19,11 @@ body {
 
 .grid {
   height: 100%;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: "left_sidebar right_sidebar";
+      grid-template-areas: "left_sidebar right_sidebar";
   padding: 0;
 }
 
@@ -31,12 +33,18 @@ body {
 }
 
 .left_sidebar {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   background-position: center;
-  background-size: cover;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+          background-size: cover;
   grid-area: left_sidebar;
 }
 
 .right_sidebar {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
   grid-area: right_sidebar;
   background: #202020;
 }
@@ -45,9 +53,18 @@ body {
 .right_sidebar {
   max-height: 100%;
   background-image: url(../img/darknoise.png);
+  display: -ms-grid;
   display: grid;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .image {
@@ -64,8 +81,16 @@ body {
 }
 
 .title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0 0 45px 0;
   font-family: "Game of Thrones";
   font-size: 30px;
@@ -74,12 +99,20 @@ body {
 }
 
 .form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
   width: 370px;
   max-height: 70%;
   color: #202020;
   text-align: start;
-  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #secondForm {
@@ -122,7 +155,9 @@ input {
   margin-bottom: 10px;
   font-size: 15px;
   color: #d3bb89;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 
@@ -196,7 +231,9 @@ h3 {
   width: 25px;
   height: 25px;
   background-color: #d3bb89;
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
   position: absolute;
   top: 0;
   left: 0;
@@ -209,7 +246,9 @@ h3 {
   width: 25px;
   height: 25px;
   background-image: url("../img/checkbox-26.png");
-  background-size: 25px 25px;
+  -webkit-background-size: 25px 25px;
+     -moz-background-size: 25px 25px;
+          background-size: 25px 25px;
   position: absolute;
   top: 0;
   left: 0;
@@ -225,6 +264,7 @@ button:hover {
   outline: 1px solid #fef8eb;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -233,9 +273,21 @@ button:focus {
 }
 
 .button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 40px;
   background-color: #c19a49;
@@ -275,12 +327,24 @@ button:focus {
 
 
 .list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   background-image: url(../img/darknoise.png);
   font-size: 16px;
-  justify-content: left;
-  align-items: center;
+  -webkit-box-pack: left;
+  -webkit-justify-content: left;
+     -moz-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: none;
   padding: 10px 0;
   margin-bottom: 10px;
