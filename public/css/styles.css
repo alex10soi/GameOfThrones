@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+
+:root {
+  --main-font-size: 20px;
+
 html,
 body {
   height: 100%;
@@ -156,9 +160,9 @@ input {
   border-right: none;
   border-top: none;
   line-height: 3;
-  padding-left: 3px;
+  /*padding-left: 3px;*/
   margin-bottom: 10px;
-  font-size: 15px;
+  font-size: var(--main-font-size);
   color: #d3bb89;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
