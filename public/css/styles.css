@@ -10,7 +10,7 @@ body {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #202020;
+  background-color: green;
   font-size: 15px;
   line-height: 20px;
   margin: 0;
@@ -23,7 +23,7 @@ body {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-      grid-template-areas: "left_sidebar right_sidebar";
+                  grid-template-areas: "left_sidebar right_sidebar";
   padding: 0;
 }
 
