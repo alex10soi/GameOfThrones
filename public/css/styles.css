@@ -6,11 +6,11 @@
 html,
 body {
   height: 100%;
+  background-color: green;
 }
 
 body {
   font-family: Arial, sans-serif;
-  background-color: green;
   font-size: 15px;
   line-height: 20px;
   margin: 0;
@@ -22,8 +22,7 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-                  grid-template-areas: "left_sidebar right_sidebar";
+  grid-template-columns: 1fr 1fr;                                                                                                                                                                                                                                                        grid-template-areas: "left_sidebar right_sidebar";
   padding: 0;
 }
 
@@ -37,8 +36,8 @@ body {
   -ms-grid-column: 1;
   background-position: center;
   -webkit-background-size: cover;
-     -moz-background-size: cover;
-          background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
   grid-area: left_sidebar;
 }
 
@@ -57,14 +56,14 @@ body {
   display: grid;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-     -moz-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .image {
@@ -77,7 +76,7 @@ body {
   font-family: "Game of Thrones", "Arial", sans-serif;
   font-style: normal;
   font-weight: 100;
-  src: url("fonts/Game of Thrones.ttf") format('truetype');
+  src: url('../../../GameOfThrones/public/fonts/Game_of_Thrones.ttf') format('truetype');
 }
 
 .title {
@@ -88,9 +87,9 @@ body {
   display: flex;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-     -moz-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0 0 45px 0;
   font-family: "Game of Thrones";
   font-size: 30px;
@@ -110,9 +109,14 @@ body {
   text-align: start;
   -webkit-box-align: center;
   -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 #secondForm {
@@ -146,7 +150,8 @@ input#text {
 input {
   width: 100%;
   background-image: url(../img/darknoise.png);
-  border-bottom: 1px solid #d3bb89;
+  background-color: #202020;
+  border-bottom: 1px solid ;
   border-left: none;
   border-right: none;
   border-top: none;
@@ -156,14 +161,40 @@ input {
   font-size: 15px;
   color: #d3bb89;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 
+
 input:-webkit-autofill {
-  -webkit-transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: #d3bb89 !important;
+  -webkit-transition: background-color 5000s ease-in-out 0s !important;
+  -webkit-text-fill-color: #d3bb89;
+}
+
+input:focus {
+  outline: none;
+}
+
+/*input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #d3bb89;
+  -webkit-transition: background-image 5000s ease-in-out 0s;
+  transition: background-image 5000s ease-in-out 0s;
+}*/
+
+/*
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+@-webkit-keyframes autofill {
+  to {
+    color: inherit;
+    background: transparent;
+  }
 }
 
 input:hover,
@@ -171,6 +202,14 @@ input:focus {
   outline: 2px solid #d3bb89;
 }
 
+input:-webkit-autofill { 
+        background-color: #FAFFBD !important; background-image:none !important; 
+}
+*/
+/*
+#email input:-webkit-autofill {
+  background-image: url(../img/darknoise.png) !important;
+}*/
 
 .paragrath {
   margin-bottom: 10px;
@@ -232,8 +271,8 @@ h3 {
   height: 25px;
   background-color: #d3bb89;
   -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-          border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   position: absolute;
   top: 0;
   left: 0;
@@ -247,8 +286,8 @@ h3 {
   height: 25px;
   background-image: url("../img/checkbox-26.png");
   -webkit-background-size: 25px 25px;
-     -moz-background-size: 25px 25px;
-          background-size: 25px 25px;
+  -moz-background-size: 25px 25px;
+  background-size: 25px 25px;
   position: absolute;
   top: 0;
   left: 0;
@@ -280,14 +319,14 @@ button:focus {
   display: flex;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-     -moz-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
   height: 40px;
   background-color: #c19a49;
@@ -337,14 +376,14 @@ button:focus {
   font-size: 16px;
   -webkit-box-pack: left;
   -webkit-justify-content: left;
-     -moz-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
+  -moz-box-pack: left;
+  -ms-flex-pack: left;
+  justify-content: left;
   -webkit-box-align: center;
   -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border: none;
   padding: 10px 0;
   margin-bottom: 10px;
@@ -385,5 +424,4 @@ button:focus {
   display: inline-block;
   color: rgba(255, 51, 51, 1);
   font-family: "EB Garamond", serif;
-}
-
+}*/}
