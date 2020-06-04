@@ -6,11 +6,11 @@
 html,
 body {
   height: 100%;
+  background-color: green;
 }
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #202020;
   font-size: 15px;
   line-height: 20px;
   margin: 0;
@@ -22,8 +22,7 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-      grid-template-areas: "left_sidebar right_sidebar";
+  grid-template-columns: 1fr 1fr;                                                                                                                                                                                                                                                        grid-template-areas: "left_sidebar right_sidebar";
   padding: 0;
 }
 
@@ -67,12 +66,17 @@ body {
   align-items: center;
 }
 
+.image {
+  width: 150%;
+  min-height: 100%;
+  margin: 0 0 0 -150px;
+}
 
 @font-face {
-  font-family: "Game of Thrones";
+  font-family: "Game of Thrones", "Arial", sans-serif;
   font-style: normal;
   font-weight: 100;
-  src: url("../fonts/Game_of_Thrones.ttf") format('truetype');
+  src: url('../../../GameOfThrones/public/fonts/Game_of_Thrones.ttf') format('truetype');
 }
 
 .title {
@@ -87,7 +91,7 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0 0 45px 0;
-  font-family: "Game of Thrones", "Arial", sans-serif;
+  font-family: "Game of Thrones";
   font-size: 30px;
   color: #d3bb89;
   text-transform: uppercase;
@@ -119,6 +123,7 @@ body {
   display: none;
 }
 
+
 label {
   display: table;
   color: #d3bb89;
@@ -146,7 +151,7 @@ input {
   width: 100%;
   background-image: url(../img/darknoise.png);
   background-color: #202020;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid ;
   border-left: none;
   border-right: none;
   border-top: none;
@@ -161,6 +166,7 @@ input {
 }
 
 
+
 input:-webkit-autofill {
   -webkit-transition: background-color 5000s ease-in-out 0s !important;
   -webkit-text-fill-color: #d3bb89;
@@ -169,6 +175,41 @@ input:-webkit-autofill {
 input:focus {
   outline: none;
 }
+
+/*input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #d3bb89;
+  -webkit-transition: background-image 5000s ease-in-out 0s;
+  transition: background-image 5000s ease-in-out 0s;
+}*/
+
+/*
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+@-webkit-keyframes autofill {
+  to {
+    color: inherit;
+    background: transparent;
+  }
+}
+
+input:hover,
+input:focus {
+  outline: 2px solid #d3bb89;
+}
+
+input:-webkit-autofill { 
+        background-color: #FAFFBD !important; background-image:none !important; 
+}
+*/
+/*
+#email input:-webkit-autofill {
+  background-image: url(../img/darknoise.png) !important;
+}*/
 
 .paragrath {
   margin-bottom: 10px;
@@ -318,10 +359,6 @@ button:focus {
   outline: 0;
 }
 
-.select2-container .select2-selection--single {
-  outline: none;
-}
-
 .menu {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -387,4 +424,4 @@ button:focus {
   display: inline-block;
   color: rgba(255, 51, 51, 1);
   font-family: "EB Garamond", serif;
-}
+}*/}
